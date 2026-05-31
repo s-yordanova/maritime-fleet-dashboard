@@ -1,0 +1,112 @@
+@import "tailwindcss";
+@import "maplibre-gl/dist/maplibre-gl.css";
+
+@theme {
+  --animate-ticker: ticker 35s linear infinite;
+}
+
+@keyframes ticker {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-33.333%);
+  }
+}
+
+.fleet-marker {
+  position: relative;
+  width: 0;
+  height: 0;
+  cursor: pointer;
+}
+
+.fleet-marker::before {
+  content: "";
+  position: absolute;
+  left: -14px;
+  top: -14px;
+  width: 28px;
+  height: 28px;
+}
+
+.fleet-marker-pulse {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 9999px;
+  opacity: 0.55;
+  animation: marker-pulse 2.4s ease-out infinite;
+  pointer-events: none;
+  filter: blur(1px);
+  transform: translate(-50%, -50%);
+}
+
+.fleet-marker-dot {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 9999px;
+  border: 2px solid white;
+  box-shadow:
+    0 0 16px currentColor,
+    0 0 28px currentColor;
+  transition: transform 0.2s ease;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+}
+
+.fleet-marker:hover .fleet-marker-dot {
+  transform: translate(-50%, -50%) scale(1.25);
+}
+
+@keyframes marker-pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(0.35);
+    opacity: 0.75;
+  }
+
+  60% {
+    opacity: 0.25;
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(2.6);
+    opacity: 0;
+  }
+}
+
+.vessel-dot {
+  background: #38bdf8;
+}
+
+.agent-dot {
+  background: #34d399;
+}
+
+.vessel-pulse {
+  background: #38bdf8;
+}
+
+.agent-pulse {
+  background: #34d399;
+}
+
+.maplibregl-popup-content {
+  border: 1px solid rgba(56, 189, 248, 0.35) !important;
+  border-radius: 14px !important;
+  background: rgba(15, 23, 42, 0.92) !important;
+  box-shadow: 0 20px 40px rgba(2, 6, 23, 0.45) !important;
+  backdrop-filter: blur(12px);
+  padding: 0 !important;
+}
+
+.maplibregl-popup-tip {
+  border-top-color: rgba(15, 23, 42, 0.92) !important;
+  border-bottom-color: rgba(15, 23, 42, 0.92) !important;
+}
