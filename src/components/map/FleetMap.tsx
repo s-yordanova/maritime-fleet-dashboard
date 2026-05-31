@@ -20,6 +20,7 @@ export function FleetMap() {
       style: "https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json",
       center: [15, 20],
       zoom: 1.5,
+      attributionControl: false,
     });
 
     mapRef.current = map;
