@@ -18,7 +18,7 @@ export function CrewHero() {
     >
       <div className="flex flex-col gap-6">
         <div className="flex flex-col gap-6 xl:flex-row xl:items-center xl:justify-between">
-          <div className="flex items-center gap-6">
+          <div className="flex flex-col items-start gap-6 md:flex-row md:items-center">
             <div className="relative flex h-28 w-28 shrink-0 items-center justify-center rounded-3xl border border-sky-500/30 bg-sky-500/10 text-sky-300 shadow-[0_0_30px_rgba(56,189,248,0.2)]">
               <UserCircleIcon className="h-16 w-16" />
 
@@ -31,7 +31,7 @@ export function CrewHero() {
                 {crewProfile.status}
               </div>
 
-              <h1 className="text-4xl font-black tracking-tight text-white">
+              <h1 className="text-3xl font-black tracking-tight text-white md:text-4xl">
                 {crewProfile.name}
               </h1>
 
@@ -41,7 +41,7 @@ export function CrewHero() {
                   {crewProfile.rank}
                 </span>
 
-                <p className="mt-1 flex items-center gap-2 text-slate-400">
+                <p className="mt-3 flex flex-wrap items-center gap-2 text-sm text-slate-400">
                   <span>ID: {crewProfile.id}</span>
 
                   <span>•</span>
@@ -62,7 +62,7 @@ export function CrewHero() {
             </div>
           </div>
 
-          <div className="grid gap-4 sm:grid-cols-2 xl:w-[620px] xl:grid-cols-4">
+          <div className="grid w-full gap-4 sm:grid-cols-2 xl:w-[620px] xl:grid-cols-4">
             {heroStats.map((item, index) => {
               const Icon = item.icon;
 
