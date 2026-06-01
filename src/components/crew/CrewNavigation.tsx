@@ -19,6 +19,7 @@ export function CrewNavigation() {
 
           return (
             <button
+              key={tab.id}
               onClick={() => setActiveTab(tab.id)}
               className={clsx(
                 "flex shrink-0 items-center gap-2 rounded-full border px-4 py-2 text-sm font-medium transition-all duration-150 hover:-translate-y-1",
