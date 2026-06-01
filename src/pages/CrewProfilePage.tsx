@@ -7,6 +7,7 @@ import { CrewNavigation } from "../components/crew/CrewNavigation";
 import { useCrewProfileStore } from "../store/crewProfileStore";
 import { ArrowLeftIcon } from "@heroicons/react/24/outline";
 import { useNavigate } from "react-router-dom";
+import { ScrollToTopButton } from "../components/common/ScrollToTopButton";
 
 export function CrewProfilePage() {
   const navigate = useNavigate();
@@ -43,6 +44,7 @@ export function CrewProfilePage() {
             <CrewAvailability />
           </>
         )}
+        <ScrollToTopButton />
       </main>
     </div>
   );
