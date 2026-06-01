@@ -19,11 +19,29 @@ export function CrewHero() {
       <div className="flex flex-col gap-6">
         <div className="flex flex-col gap-6 xl:flex-row xl:items-center xl:justify-between">
           <div className="flex flex-col items-start gap-6 md:flex-row md:items-center">
-            <div className="relative flex h-28 w-28 shrink-0 items-center justify-center rounded-3xl border border-sky-500/30 bg-sky-500/10 text-sky-300 shadow-[0_0_30px_rgba(56,189,248,0.2)]">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.85 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{
+                duration: 0.5,
+                type: "spring",
+                stiffness: 120,
+              }}
+              className="relative flex h-28 w-28 shrink-0 items-center justify-center rounded-3xl border border-sky-500/30 bg-sky-500/10 text-sky-300 shadow-[0_0_30px_rgba(56,189,248,0.2)]"
+            >
               <UserCircleIcon className="h-16 w-16" />
 
-              <span className="absolute -right-1 -top-1 h-4 w-4 rounded-full border-2 border-slate-900 bg-emerald-400" />
-            </div>
+              <motion.span
+                className="absolute -right-1 -top-1 h-4 w-4 rounded-full border-2 border-slate-900 bg-emerald-400"
+                animate={{
+                  scale: [1, 1.2, 1],
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                }}
+              />
+            </motion.div>
 
             <div>
               <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-sm font-medium text-emerald-300">
@@ -31,9 +49,14 @@ export function CrewHero() {
                 {crewProfile.status}
               </div>
 
-              <h1 className="text-3xl font-black tracking-tight text-white md:text-4xl">
+              <motion.h1
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.15, duration: 0.4 }}
+                className="text-4xl font-black tracking-tight text-white"
+              >
                 {crewProfile.name}
-              </h1>
+              </motion.h1>
 
               <div className="mt-3 flex flex-wrap items-center gap-3 text-sm">
                 <span className="inline-flex items-center gap-2 rounded-full border border-sky-500/30 bg-sky-500/10 px-3 py-1 font-medium text-sky-300">
