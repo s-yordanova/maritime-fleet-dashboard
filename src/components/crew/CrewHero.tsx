@@ -13,20 +13,16 @@ export function CrewHero() {
     <motion.section
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 0.75, ease: "easeOut" }}
       className="rounded-3xl border border-sky-500/20 bg-slate-900/80 p-6 shadow-[0_0_40px_rgba(56,189,248,0.08)] backdrop-blur"
     >
       <div className="flex flex-col gap-6">
         <div className="flex flex-col gap-6 xl:flex-row xl:items-center xl:justify-between">
           <div className="flex flex-col items-start gap-6 md:flex-row md:items-center">
             <motion.div
-              initial={{ opacity: 0, scale: 0.85 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{
-                duration: 0.5,
-                type: "spring",
-                stiffness: 120,
-              }}
+              initial={{ opacity: 0, x: -28 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.25, duration: 0.55, ease: "easeOut" }}
               className="relative flex h-28 w-28 shrink-0 items-center justify-center rounded-3xl border border-sky-500/30 bg-sky-500/10 text-sky-300 shadow-[0_0_30px_rgba(56,189,248,0.2)]"
             >
               <UserCircleIcon className="h-16 w-16" />
@@ -50,9 +46,9 @@ export function CrewHero() {
               </div>
 
               <motion.h1
-                initial={{ opacity: 0, x: -20 }}
+                initial={{ opacity: 0, x: -28 }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.15, duration: 0.4 }}
+                transition={{ delay: 0.25, duration: 0.55, ease: "easeOut" }}
                 className="text-4xl font-black tracking-tight text-white"
               >
                 {crewProfile.name}
@@ -94,8 +90,9 @@ export function CrewHero() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{
-                    delay: index * 0.1,
-                    duration: 0.4,
+                    delay: 0.45 + index * 0.12,
+                    duration: 0.45,
+                    ease: "easeOut",
                   }}
                   key={item.label}
                   className="rounded-2xl border border-slate-800 bg-slate-950/60 p-4 transition-all duration-300 hover:-translate-y-1 hover:border-sky-500/40 hover:bg-slate-950"
@@ -124,8 +121,9 @@ export function CrewHero() {
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{
-                delay: 0.4 + index * 0.05,
-                duration: 0.3,
+                delay: 0.85 + index * 0.06,
+                duration: 0.35,
+                ease: "easeOut",
               }}
               className="rounded-xl border border-slate-800 bg-slate-950/40 px-4 py-3 transition-all duration-300 hover:-translate-y-1 hover:border-sky-500/40 hover:bg-slate-950"
             >
